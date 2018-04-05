@@ -17,5 +17,8 @@
     "url": "https://github.com/bolighed/preact-form/issues"
   },
   "homepage": "https://github.com/bolighed/preact-form#readme",
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "preact": "^8.2.7"
+  }
 }
