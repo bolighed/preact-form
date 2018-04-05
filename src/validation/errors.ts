@@ -1,8 +1,9 @@
 import { IValidator, IValidatable } from './validator';
 
+
 export class ValidationError extends Error {
 
-    public validator: IValidator;
+    public validator: IValidator | undefined;
 
     constructor(public editor: IValidatable, public message: string) {
         super(message);
@@ -37,7 +38,7 @@ export class FormValidationError extends Error {
 
 export function createError(editor: IValidatable, validator: IValidator) {
 
-    const err = new ValidationError(editor, validator.message);
+    const err = new ValidationError(editor, validator.message || '');
     err.validator = validator;
 
     return err;

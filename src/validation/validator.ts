@@ -12,20 +12,20 @@ export interface IValidatable {
 }
 
 export interface IValidator {
-    message: string;
+    message: string |  undefined;
     validate(editor: IValidatable): boolean;
 }
 
 
 export abstract class AbstractValidator {
-    message: string;
+    message: string | undefined;
     constructor(msg?: string) {
         if (msg) this.message = msg;
     }
 }
 
 export class RequiredValidator extends AbstractValidator implements IValidator {
-    message: string;
+    message: string | undefined;
     constructor(msg: string = "{{label}} skal udfyldes") {
         super(msg);
     }
